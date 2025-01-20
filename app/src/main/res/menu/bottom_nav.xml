@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/explore_map"
+        android:title="Explore Map"
+        android:icon="@drawable/explore_icon"
+        />
+
+    <item
+        android:id="@+id/notif"
+        android:title="Notifications"
+        android:icon="@drawable/notif_icon"
+        />
+
+    <item
+        android:id="@+id/profile"
+        android:title="Profile"
+        android:icon="@drawable/profile_icon"
+        />
+
+</menu>

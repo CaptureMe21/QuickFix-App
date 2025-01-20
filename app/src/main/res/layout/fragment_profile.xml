@@ -1,0 +1,243 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DFFFE5">
+
+
+    <ImageView
+        android:id="@+id/userProfilePic"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:contentDescription="Profile Picture"
+        android:src="@drawable/user_profile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.226"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.067" />
+
+    <TextView
+        android:id="@+id/roleOfUser"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Role of User"
+
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/userProfilePic"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.061" />
+
+    <TextView
+        android:id="@+id/fullName"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Fullname of User"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toEndOf="@+id/userProfilePic"
+        app:layout_constraintTop_toBottomOf="@id/roleOfUser"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/isVerified"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Is Verified"
+        android:textAlignment="center"
+        android:textColor="#008000"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintStart_toEndOf="@+id/userProfilePic"
+        app:layout_constraintTop_toBottomOf="@id/fullName"
+        app:layout_constraintVertical_bias="0.002" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profileSection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/profile_layout_bg"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/isVerified"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/emailLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Email :"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.07"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/emailField"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/inactive_bg"
+            android:paddingStart="8dp"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/emailLabel"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.029" />
+
+        <!-- Phone Number Field -->
+
+        <!-- Date Registered Label -->
+
+        <TextView
+            android:id="@+id/addressLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address :"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailLabel"
+            app:layout_constraintVertical_bias="0.041" />
+
+        <TextView
+            android:id="@+id/addressField"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/inactive_bg"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:paddingStart="8dp"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/addressLabel"
+            app:layout_constraintTop_toBottomOf="@id/emailField"
+            app:layout_constraintVertical_bias="0.056" />
+
+        <TextView
+            android:id="@+id/phoneLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Number :"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addressLabel"
+            app:layout_constraintVertical_bias="0.32" />
+
+        <TextView
+            android:id="@+id/phoneField"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/inactive_bg"
+            android:paddingStart="8dp"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/phoneLabel"
+            app:layout_constraintTop_toBottomOf="@id/addressField" />
+
+        <!-- Date Registered Field -->
+
+        <TextView
+            android:id="@+id/dateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Date Registered :"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/phoneLabel"
+            app:layout_constraintVertical_bias="0.094" />
+
+        <TextView
+            android:id="@+id/dateField"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/inactive_bg"
+            android:paddingStart="8dp"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/dateLabel"
+            app:layout_constraintTop_toTopOf="@id/dateLabel" />
+
+        <!-- Verify Button -->
+        <Button
+            android:id="@+id/verifyButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#FFFFFF"
+            android:text="Verify NOW"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dateField" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#CAD7C9"
+        android:text="Log Out"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileSection"
+        app:layout_constraintVertical_bias="0.047" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

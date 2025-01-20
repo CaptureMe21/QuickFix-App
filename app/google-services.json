@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "734790011400",
+    "firebase_url": "https://quickfix-app-dad6b-default-rtdb.firebaseio.com",
+    "project_id": "quickfix-app-dad6b",
+    "storage_bucket": "quickfix-app-dad6b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:734790011400:android:5422addaf6aac5450adfbd",
+        "android_client_info": {
+          "package_name": "com.example.quickfixapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSQvkqWxwWliqYPK43FbSRhaDGpusu-rc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

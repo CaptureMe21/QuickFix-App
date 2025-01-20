@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LandingActivity"
+    android:background="@drawable/bg4">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="111dp"
+        android:layout_height="107dp"
+        android:layout_marginTop="228dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/logocircle"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/quickfix_logo" />
+
+    <!-- android:fontFamily="@font/bagel_fat_one" -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="209dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="90dp"
+
+        android:paddingStart="25dp"
+        android:paddingTop="0dp"
+        android:text="QuickFix"
+        android:textColor="#FFFFFF"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/CustomerSignUp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/CustomerSignUp"
+        android:layout_width="350dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="10dp"
+        android:text="Sign Up as Motorcycle Owner"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:backgroundTint="#627C85"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/ShopOwnerSignUp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:strokeColor="#35524A"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/ShopOwnerSignUp"
+        android:layout_width="350dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="50dp"
+        android:text="Sign Up as Repair Shop Ower"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:backgroundTint="#627C85"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CustomerSignUp"
+        app:strokeColor="#35524A"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>
