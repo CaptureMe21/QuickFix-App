@@ -12,7 +12,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.quickfixapp.MainActivity;
 import com.example.quickfixapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -84,18 +83,14 @@ public class ProfileFragment extends Fragment {
         return view;
     }
 
-    /**
-     * Method to display user details in the ProfileFragment
-     */
     private void displayUserDetails() {
         // Get the current user ID from Firebase Authentication
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = auth.getCurrentUser();
 
         if (currentUser != null) {
-            String userId = currentUser.getUid(); // Get the UID of the currently logged-in user
+            String userId = currentUser.getUid();
 
-            // Reference the logged-in user's data in the database
             DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("Users").child("clientAccount").child(userId);
 
             userRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -131,19 +126,18 @@ public class ProfileFragment extends Fragment {
                             } else if (roleValue == 3) {
                                 roleOfUser = "Mechanic";
                             } else {
-                                roleOfUser = "Unknown Role"; // Default for unexpected values
+                                roleOfUser = "Unknown Role";
                             }
                         } else {
-                            roleOfUser = "No Role Assigned"; // Handle null role values
+                            roleOfUser = "No Role Assigned";
                         }
 
                         String isVerified = snapshot.child("verified").getValue(Boolean.class) ? "Verified" : "Not Verified";
                         String email = snapshot.child("email").getValue(String.class);
-                        String phoneNumber = snapshot.child("phoneNum").getValue(String.class); // Correct key used
+                        String phoneNumber = snapshot.child("phoneNum").getValue(String.class);
                         String isOnline = snapshot.child("isOnline").getValue(Boolean.class) ? "Online" : "Offline";
                         String date = snapshot.child("dateRegistered").getValue(String.class);
 
-                        // Set data to UI components
                         tvRoleOfUser.setText(roleOfUser);
                         tvFullName.setText(fullName);
                         tvIsVerified.setText(isVerified);
@@ -151,7 +145,6 @@ public class ProfileFragment extends Fragment {
                         tvPhoneNumber.setText(phoneNumber);
                         tvDateRegistered.setText(date);
 
-                        // Check if the address has any data
                         if (address.trim().isEmpty()) {
                             tvAddress.setText("Not verified yet. Finish your verification");
                         } else {
@@ -173,14 +166,24 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-    // Blank method for Verify button
     private void onVerifyButtonClick() {
-        // Add logic here for verification
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = auth.getCurrentUser();
+
+        if (currentUser != null) {
+            String userId = currentUser.getUid(); // Get the user ID as a String
+
+            // Create an intent and pass userId
+            Intent intent = new Intent(getActivity(), VerifyActivity.class);
+            intent.putExtra("userId", userId); // Pass only the String userId
+            startActivity(intent);
+        } else {
+            Toast.makeText(getContext(), "User not authenticated", Toast.LENGTH_SHORT).show();
+        }
     }
 
-    // Logout button functionality
+
     private void onLogoutButtonClick() {
-        // Get the currently logged-in user's ID
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = auth.getCurrentUser();
 
@@ -188,28 +191,22 @@ public class ProfileFragment extends Fragment {
             String userId = currentUser.getUid();
             DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("Users").child("clientAccount").child(userId);
 
-            // Set isOnline to false in the database
             userRef.child("isOnline").setValue(false).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    // Sign out the user from FirebaseAuth
                     auth.signOut();
 
-                    // Navigate to ClientLogin activity
                     Intent intent = new Intent(getActivity(), ClientLogin.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
 
-                    // Close the current fragment's parent activity
                     if (getActivity() != null) {
                         getActivity().finish();
                     }
                 } else {
-                    // Handle the case where updating isOnline fails
                     Toast.makeText(getActivity(), "Error logging out. Please try again.", Toast.LENGTH_SHORT).show();
                 }
             });
         } else {
-            // No user is logged in, navigate directly to ClientLogin
             Intent intent = new Intent(getActivity(), ClientLogin.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);

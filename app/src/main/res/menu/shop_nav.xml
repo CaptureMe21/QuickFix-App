@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/home_icon"
+        />
+
+    <item
+        android:id="@+id/booking"
+        android:title="Booking"
+        android:icon="@drawable/booking_icon"
+        />
+
+    <item
+        android:id="@+id/shopNotif"
+        android:title="Notifications"
+        android:icon="@drawable/notif_icon"
+        />
+
+    <item
+        android:id="@+id/shopProfile"
+        android:title="Profile"
+        android:icon="@drawable/profile_icon"
+        />
+
+</menu>

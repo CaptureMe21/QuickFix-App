@@ -1,4 +1,4 @@
-package com.example.quickfixapp;
+package com.example.quickfixapp.client;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,9 +12,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.quickfixapp.client.MapFragment;
-import com.example.quickfixapp.client.NotificationFragment;
-import com.example.quickfixapp.client.ProfileFragment;
+import com.example.quickfixapp.LandingPage;
+import com.example.quickfixapp.R;
 import com.example.quickfixapp.databinding.ActivityMainBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

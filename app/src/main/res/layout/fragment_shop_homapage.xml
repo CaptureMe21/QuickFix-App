@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".shopOwner.ShopHomepage"
+    android:background="#FEEFDD">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@drawable/shop_layoutbg"
+        app:layout_constraintBottom_toTopOf="@id/textView52"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <!-- Add Font to this-->
+        <!-- android:fontFamily="@font/bagel_fat_one" -->
+        <LinearLayout
+            android:id="@+id/linearLayout7"
+            android:layout_width="320dp"
+            android:layout_height="90dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="66dp"
+
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/linearLayout6"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_below="@+id/textView45"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="100dp"
+                android:background="@drawable/textfieldbg">
+
+                <!--app:srcCompat="@drawable/upload_icon"-->
+                <ImageView
+                    android:id="@+id/uploadProof"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="0" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/uploadProof"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Upload Shop Logo"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="8dp" />
+            </RelativeLayout>
+
+            <!-- Add Font to this-->
+            <!-- android:fontFamily="@font/bagel_fat_one" -->
+            <TextView
+                android:id="@+id/shopName"
+                android:layout_width="200dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="-90dp"
+                android:layout_marginTop="24dp"
+                android:layout_weight="0"
+
+                android:paddingStart="12dp"
+                android:paddingTop="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="-60dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="12dp"
+            android:layout_toEndOf="@+id/linearLayout7"
+            app:srcCompat="@drawable/store_icon" />
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="66dp"
+            android:layout_below="@+id/linearLayout7"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="180dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/purple_bg"
+            android:orientation="vertical">
+
+            <!-- Add Font to this-->
+            <!-- android:fontFamily="@font/bagel_fat_one" -->
+            <TextView
+                android:id="@+id/textView53"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="28dp"
+                android:text="Completed Booking"
+                android:textSize="18sp"
+
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <!-- Add Font to this-->
+            <!-- android:fontFamily="@font/bagel_fat_one" -->
+            <TextView
+                android:id="@+id/completedBooking"
+                android:layout_width="150dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="24dp"
+                android:textAlignment="textEnd"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+
+                android:textStyle="bold"
+                android:text="" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="66dp"
+            android:layout_below="@+id/linearLayout7"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="232dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/purple_bg2"
+            android:orientation="vertical">
+
+            <!-- Add Font to this-->
+            <!-- android:fontFamily="@font/bagel_fat_one" -->
+            <TextView
+                android:id="@+id/textView54"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="28dp"
+                android:text="Pending Booking"
+                android:textSize="18sp"
+
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <!-- Add Font to this-->
+            <!-- android:fontFamily="@font/bagel_fat_one" -->
+            <TextView
+                android:id="@+id/pendingBooking"
+                android:layout_width="150dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="12dp"
+                android:textAlignment="textEnd"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+
+                android:textStyle="bold"
+                android:text="" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Add Font to this-->
+    <!-- android:fontFamily="@font/bagel_fat_one" -->
+    <TextView
+        android:id="@+id/textView52"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+
+        android:text="Dashboard"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@id/mechanic_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+    <RelativeLayout
+        android:id="@+id/mechanic_btn"
+        android:layout_width="130dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="430dp"
+        android:background="@drawable/dashboard_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView52">
+
+        <LinearLayout
+            android:id="@+id/mechanic"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginBottom="35dp"
+            android:background="@drawable/back_bg"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/mechanic_dashboard_icon"
+                tools:layout_editor_absoluteX="26dp"
+                tools:layout_editor_absoluteY="14dp" />
+        </LinearLayout>
+
+        <!-- Add Font to this-->
+        <!-- android:fontFamily="@font/bagel_fat_one" -->
+        <TextView
+            android:id="@+id/mechanicNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView56"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="-40dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="45dp"
+            android:layout_toEndOf="@+id/mechanic"
+
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- Add Font to this-->
+        <!-- android:fontFamily="@font/bagel_fat_one" -->
+        <TextView
+            android:id="@+id/textView56"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mechanic"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="-30dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="8dp"
+
+            android:text="Mechanic"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bookingReport"
+        android:layout_width="130dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="1dp"
+        android:background="@drawable/dashboard_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/service_btn"
+        app:layout_constraintTop_toBottomOf="@+id/textView52">
+
+        <LinearLayout
+            android:id="@+id/report"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginBottom="35dp"
+            android:background="@drawable/back_bg"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/report_icon"
+                tools:layout_editor_absoluteX="26dp"
+                tools:layout_editor_absoluteY="14dp" />
+        </LinearLayout>
+
+        <!-- Add Font to this-->
+        <!-- android:fontFamily="@font/bagel_fat_one" -->
+        <TextView
+            android:id="@+id/textView58"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/report"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="-30dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="8dp"
+
+            android:text="Booking Report"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/service_btn"
+        android:layout_width="130dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/dashboard_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/mechanic_btn"
+        app:layout_constraintTop_toBottomOf="@+id/textView52">
+
+        <LinearLayout
+            android:id="@+id/service"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="78dp"
+            android:layout_marginBottom="35dp"
+            android:background="@drawable/back_bg"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/service_icon"
+                tools:layout_editor_absoluteX="26dp"
+                tools:layout_editor_absoluteY="14dp" />
+        </LinearLayout>
+
+        <!-- Add Font to this-->
+        <!-- android:fontFamily="@font/bagel_fat_one" -->
+        <TextView
+            android:id="@+id/serviceNum"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="-40dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_toEndOf="@+id/service"
+
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- Add Font to this-->
+        <!-- android:fontFamily="@font/bagel_fat_one" -->
+        <TextView
+            android:id="@+id/textView57"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/service"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="-30dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="8dp"
+
+            android:text="Services"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

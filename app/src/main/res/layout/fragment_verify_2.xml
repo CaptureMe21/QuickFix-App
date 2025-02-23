@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".client.Verify_2Fragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Add Font to this-->
+        <TextView
+            android:id="@+id/textView94"
+            android:layout_width="326dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="0dp"
+
+            android:text="Please upload or take a picture of your PhilSys ID"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/textView98"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.193"
+            app:layout_constraintStart_toEndOf="@+id/imageView13"
+            app:layout_constraintTop_toBottomOf="@+id/textView82" />
+
+        <LinearLayout
+            android:id="@+id/back_btn"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/back_bg"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/textView79"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:src="@drawable/chevron" />
+        </LinearLayout>
+
+        <!-- Add Font to this-->
+        <TextView
+            android:id="@+id/textView79"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+
+            android:text="Verify your Account NOW"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@id/textView80"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/back_btn" />
+
+        <!-- Add Font to this-->
+        <TextView
+            android:id="@+id/textView80"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Verify your account in three easy steps"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintBottom_toTopOf="@id/progressLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.759"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView79" />
+
+        <LinearLayout
+            android:id="@+id/progressLayout"
+            android:layout_width="360dp"
+            android:layout_height="44dp"
+            android:orientation="vertical"
+            android:layout_marginTop="24dp"
+            app:layout_constraintBottom_toTopOf="@id/textView81"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView80">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/step_1"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/progress_unactive_bg"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="100dp"
+                android:layout_height="5dp"
+                android:layout_marginStart="65dp"
+                android:layout_marginTop="-15dp"
+                android:background="#000000" />
+
+            <LinearLayout
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="180dp"
+                android:layout_marginTop="-18dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/step_2"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/progress_active_bg"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="100dp"
+                android:layout_height="5dp"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="-14dp"
+                android:background="#000000" />
+
+            <LinearLayout
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="330dp"
+                android:layout_marginTop="-15dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/step_3"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/progress_unactive_bg"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Add Font to this-->
+        <TextView
+            android:id="@+id/textView81"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+
+            android:text="Step 2"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/textView82"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.075"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progressLayout" />
+
+        <!-- Add Font to this-->
+        <TextView
+            android:id="@+id/textView82"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+
+            android:text="Second step before you are verified"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/imageView13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.415"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView81" />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="45dp"
+            app:layout_constraintBottom_toTopOf="@id/textView98"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.067"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView82"
+            app:srcCompat="@drawable/info_icon" />
+
+        <!-- Add Font to this-->
+        <TextView
+            android:id="@+id/textView98"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="Upload a PhilSys ID"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+
+            app:layout_constraintBottom_toTopOf="@id/textView99"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.103"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView94" />
+
+        <!-- Add Font to this-->
+        <TextView
+            android:id="@+id/textView99"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Front ID"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+
+            android:layout_marginTop="12dp"
+            app:layout_constraintBottom_toTopOf="@id/front_id"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.056"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView98" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/front_id"
+            android:layout_width="100dp"
+            android:layout_height="44dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            app:backgroundTint="#828282"
+            app:icon="@drawable/upload_icon"
+            app:iconGravity="top"
+            app:iconSize="24dp"
+            app:iconTint="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/textView101"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView99"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <!-- Add Font to this-->
+        <TextView
+            android:id="@+id/frontId_name"
+            android:layout_width="250dp"
+            android:layout_height="44dp"
+            android:text=""
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:background="@drawable/textfieldbg"
+
+            android:paddingStart="12dp"
+            android:paddingTop="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toTopOf="@id/textView101"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/front_id"
+            app:layout_constraintTop_toBottomOf="@+id/textView99" />
+
+        <!-- Add Font to this-->
+        <TextView
+            android:id="@+id/textView101"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+
+            android:text="Back ID"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@id/back_id"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.046"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/front_id" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/back_id"
+            android:layout_width="100dp"
+            android:layout_height="44dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="12dp"
+            app:backgroundTint="#828282"
+
+            app:icon="@drawable/upload_icon"
+            app:iconGravity="top"
+            app:iconSize="24dp"
+            app:iconTint="@color/black"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toTopOf="@id/nextBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.083"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView101" />
+
+        <!-- Add Font to this-->
+        <TextView
+            android:id="@+id/backID_name"
+            android:layout_width="250dp"
+            android:layout_height="44dp"
+            android:background="@drawable/textfieldbg"
+
+            android:paddingStart="12dp"
+            android:paddingTop="8dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintBottom_toTopOf="@id/nextBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/back_id"
+            app:layout_constraintTop_toBottomOf="@+id/textView101" />
+
+        <!-- Add Font to this-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nextBtn"
+            android:layout_width="150dp"
+            android:layout_height="54dp"
+            android:layout_marginBottom="170dp"
+            android:backgroundTint="#828282"
+
+            android:text="Next"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.931"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/backID_name"
+            app:layout_constraintVertical_bias="0.215" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

@@ -13,7 +13,13 @@
         android:theme="@style/Theme.QuickFixApp"
         tools:targetApi="31">
         <activity
+            android:name=".client.VerifyActivity"
+            android:exported="false" />
+        <activity
             android:name=".LandingPage"
+            android:exported="false" />
+        <activity
+            android:name=".shopOwner.ShopMainActivity"
             android:exported="false" />
         <activity
             android:name=".client.ClientSignup"
@@ -25,7 +31,7 @@
             android:name=".client.ClientLogin"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".client.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

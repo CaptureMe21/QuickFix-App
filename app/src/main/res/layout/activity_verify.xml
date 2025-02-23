@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".client.VerifyActivity">
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <RelativeLayout
+                    android:id="@+id/back_btn"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="@drawable/back_bg"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@+id/textView78"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:src="@drawable/chevron" />
+                </RelativeLayout>
+
+                <!-- Add Font to this-->
+                <TextView
+                    android:id="@+id/textView79"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+
+                    android:text="Verify your Account NOW"
+                    android:textColor="@color/black"
+                    android:textSize="24sp" />
+
+                <!-- Add Font to this-->
+                <TextView
+                    android:id="@+id/textView80"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="Verify your account in three easy steps"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="12dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/step_1"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:background="@drawable/progress_active_bg"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/divider"
+                        android:layout_width="100dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="65dp"
+                        android:layout_marginTop="-15dp"
+                        android:background="#000000" />
+
+                    <LinearLayout
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="180dp"
+                        android:layout_marginTop="-18dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/step_2"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:background="@drawable/progress_unactive_bg"
+                            android:gravity="center"
+                            android:text="2"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+
+                    <View
+                        android:id="@+id/divider2"
+                        android:layout_width="100dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="220dp"
+                        android:layout_marginTop="-14dp"
+                        android:background="#000000" />
+
+                    <LinearLayout
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="330dp"
+                        android:layout_marginTop="-15dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/step_3"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:background="@drawable/progress_unactive_bg"
+                            android:gravity="center"
+                            android:text="3"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Add Font to this-->
+                <TextView
+                    android:id="@+id/textView81"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Step 1"
+
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <!-- Add Font to this-->
+                <TextView
+                    android:id="@+id/textView82"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="Start your verification by filling up the form"
+
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/imageView13"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="19dp"
+                    app:srcCompat="@drawable/info_icon" />
+
+                <!-- Add Font to this-->
+                <TextView
+                    android:id="@+id/textView83"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginTop="-32dp"
+                    android:text="Fill up the form based on your PhilSys ID for verification"
+                    android:textSize="18sp" />
+
+                <!-- Add Font to this-->
+                <TextView
+                    android:id="@+id/textView84"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Last Name"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+
+                    android:textStyle="bold" />
+
+                <!-- Add Font to this-->
+                <TextView
+                    android:id="@+id/textView85"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="200dp"
+                    android:layout_marginTop="-26dp"
+
+                    android:text="First Name"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!-- Add Font to this-->
+                <TextView
+                    android:id="@+id/lName"
+                    android:layout_width="180dp"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/textfieldbg"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:inputType="text"
+                    android:paddingStart="12dp"
+                    android:text=""
+
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <!-- Add Font to this-->
+                <TextView
+                    android:id="@+id/fName"
+                    android:layout_width="180dp"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="200dp"
+                    android:layout_marginTop="-45dp"
+                    android:background="@drawable/textfieldbg"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:inputType="text"
+                    android:paddingStart="12dp"
+
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <!-- Add Font to this-->
+                <TextView
+                    android:id="@+id/textView86"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Middle Name"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+
+                    android:textStyle="bold" />
+
+                <!-- Add Font to this-->
+                <TextView
+                    android:id="@+id/textView87"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="200dp"
+                    android:layout_marginTop="-26dp"
+
+                    android:text="Gender"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!-- Add Font to this-->
+                <TextView
+                    android:id="@+id/mName"
+                    android:layout_width="180dp"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/textfieldbg"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:inputType="text"
+                    android:paddingStart="12dp"
+                    android:text=""
+
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <RadioGroup
+                    android:id="@+id/genderGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="200dp"
+                    android:layout_marginTop="-49dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/MaleBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Male"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/FemaleBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Female"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                </RadioGroup>
+
+
+                <!-- Add Font to this-->
+                <TextView
+                    android:id="@+id/textView88"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Date of Birth"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+
+                    android:textStyle="bold" />
+
+                <!-- Add Font to this-->
+                <TextView
+                    android:id="@+id/textView89"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Month"
+                    android:textColor="@color/black"
+
+                    android:textSize="20sp" />
+
+                <!-- Add Font to this-->
+                <TextView
+                    android:id="@+id/textView90"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="190dp"
+                    android:layout_marginTop="-26dp"
+                    android:text="Day"
+
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <!-- Add Font to this-->
+                <TextView
+                    android:id="@+id/textView91"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="280dp"
+                    android:layout_marginTop="-26dp"
+                    android:text="Year"
+
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <!-- Add Font to this-->
+                <EditText
+                    android:id="@+id/birthMonth"
+                    android:layout_width="150dp"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="12dp"
+                    android:autofillHints=""
+                    android:background="@drawable/textfieldbg"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:maxLength="16"
+                    android:paddingStart="12dp"
+                    android:text=""
+
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <!-- Add Font to this-->
+                <EditText
+                    android:id="@+id/birthDay"
+                    android:layout_width="70dp"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="190dp"
+                    android:layout_marginTop="-45dp"
+                    android:autofillHints=""
+                    android:background="@drawable/textfieldbg"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:paddingStart="12dp"
+
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <!-- Add Font to this-->
+                <EditText
+                    android:id="@+id/birthYear"
+                    android:layout_width="100dp"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="280dp"
+                    android:layout_marginTop="-45dp"
+                    android:autofillHints=""
+                    android:background="@drawable/textfieldbg"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:paddingStart="12dp"
+
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <!-- Add Font to this-->
+                <TextView
+                    android:id="@+id/textView92"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Address"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+
+                    android:textStyle="bold" />
+
+                <!-- Add Font to this-->
+                <TextView
+                    android:id="@+id/textView93"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Street/Purok"
+                    android:textColor="@color/black"
+
+                    android:textSize="20sp" />
+
+                <!-- Add Font to this-->
+                <TextView
+                    android:id="@+id/textView95"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="200dp"
+                    android:layout_marginTop="-26dp"
+
+                    android:text="Barangay"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <!-- Add Font to this-->
+                <EditText
+                    android:id="@+id/street_purok"
+                    android:layout_width="180dp"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/textfieldbg"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:maxLength="32"
+                    android:paddingStart="12dp"
+                    android:text=""
+
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <!-- Add Font to this-->
+                <EditText
+                    android:id="@+id/barangay"
+                    android:layout_width="180dp"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="200dp"
+                    android:layout_marginTop="-45dp"
+                    android:background="@drawable/textfieldbg"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:maxLength="32"
+                    android:paddingStart="12dp"
+
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <!-- Add Font to this-->
+                <TextView
+                    android:id="@+id/textView96"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Municipality"
+                    android:textColor="@color/black"
+
+                    android:textSize="20sp" />
+
+                <!-- Add Font to this-->
+                <TextView
+                    android:id="@+id/textView97"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="200dp"
+                    android:layout_marginTop="-26dp"
+
+                    android:text="Province"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <!-- Add Font to this-->
+                <EditText
+                    android:id="@+id/municipality"
+                    android:layout_width="180dp"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/textfieldbg"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:maxLength="32"
+                    android:paddingStart="12dp"
+                    android:text=""
+
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <!-- Add Font to this-->
+                <EditText
+                    android:id="@+id/province"
+                    android:layout_width="180dp"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="200dp"
+                    android:layout_marginTop="-45dp"
+                    android:background="@drawable/textfieldbg"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:maxLength="32"
+                    android:paddingStart="12dp"
+
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <!-- Add Font to this-->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/nextBtn"
+                    android:layout_width="150dp"
+                    android:layout_height="54dp"
+                    android:layout_marginStart="230dp"
+                    android:layout_marginTop="24dp"
+                    android:backgroundTint="#828282"
+                    android:text="Next"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
