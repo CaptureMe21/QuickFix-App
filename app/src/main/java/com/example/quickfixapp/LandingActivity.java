@@ -9,10 +9,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.quickfixapp.client.ClientSignup;
 import com.example.quickfixapp.shopOwner.ShopMainActivity;
+import com.google.android.material.button.MaterialButton;
 
 public class LandingActivity extends AppCompatActivity {
 
-    private Button clientSignup, ownerSignup;
+    private MaterialButton clientSignup, ownerSignup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

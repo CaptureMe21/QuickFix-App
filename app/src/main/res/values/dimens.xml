@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="corners">12</dimen>
+    <dimen name="strokes">3</dimen>
+</resources>

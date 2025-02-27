@@ -1,5 +1,6 @@
 package com.example.quickfixapp.shopOwner;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 import com.example.quickfixapp.R;
 
@@ -25,6 +27,8 @@ public class ShopHomepage extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+
 
     public ShopHomepage() {
         // Required empty public constructor
@@ -61,6 +65,17 @@ public class ShopHomepage extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_shop_homapage, container, false);
+        View view = inflater.inflate(R.layout.fragment_shop_homapage, container, false);
+
+        RelativeLayout relativeLayout = view.findViewById(R.id.service_btn);
+        relativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ShopServices.class);
+                startActivity(intent);
+            }
+        });
+        return view;
+
     }
 }

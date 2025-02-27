@@ -11,9 +11,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.button.MaterialButton;
+
 public class LandingPage extends AppCompatActivity {
 
-    private Button proceed;
+    private MaterialButton proceed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
