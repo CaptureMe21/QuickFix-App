@@ -39,7 +39,6 @@ public class ShopMechanic extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_shop_mechanic);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -59,15 +58,23 @@ public class ShopMechanic extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                mechanicList.clear(); // Clear list to avoid duplication
+                List<MechanicModel> updatedList = new ArrayList<>();
+
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    MechanicModel mechanicModel = dataSnapshot.getValue(MechanicModel.class);
-                    if (mechanicModel != null) {
-                        mechanicList.add(mechanicModel);
+                    try {
+                        MechanicModel mechanic = dataSnapshot.getValue(MechanicModel.class);
+                        if (mechanic != null) {
+                            updatedList.add(mechanic);
+                        }
+                    } catch (Exception e) {
+                        Log.e("FirebaseError", "Data parsing error: " + e.getMessage());
                     }
                 }
-                mechanicAdapter.notifyDataSetChanged();
 
+                // Always update the list
+                mechanicList.clear();
+                mechanicList.addAll(updatedList);
+                mechanicAdapter.notifyDataSetChanged();
             }
 
             @Override
