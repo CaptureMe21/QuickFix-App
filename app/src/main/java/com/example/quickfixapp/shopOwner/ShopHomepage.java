@@ -67,11 +67,20 @@ public class ShopHomepage extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_shop_homapage, container, false);
 
+        RelativeLayout relativeLayout2 = view.findViewById(R.id.mechanic_btn);
         RelativeLayout relativeLayout = view.findViewById(R.id.service_btn);
         relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), ShopServices.class);
+                startActivity(intent);
+            }
+        });
+
+        relativeLayout2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ShopMechanic.class);
                 startActivity(intent);
             }
         });

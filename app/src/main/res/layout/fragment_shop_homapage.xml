@@ -217,6 +217,8 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="430dp"
+        android:clickable="true"
+        android:focusable="false"
         android:background="@drawable/dashboard_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

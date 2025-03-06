@@ -13,6 +13,9 @@
         android:theme="@style/Theme.QuickFixApp"
         tools:targetApi="31">
         <activity
+            android:name=".shopOwner.AddMechanic"
+            android:exported="false" />
+        <activity
             android:name=".shopOwner.ShopMechanic"
             android:exported="false" />
         <activity
