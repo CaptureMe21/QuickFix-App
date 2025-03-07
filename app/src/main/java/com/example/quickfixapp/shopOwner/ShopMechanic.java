@@ -30,7 +30,6 @@ import java.util.List;
 
 public class ShopMechanic extends AppCompatActivity {
 
-
     RecyclerView recyclerView;
     MechanicAdapter mechanicAdapter;
     ArrayList<MechanicModel> mechanicList;
@@ -45,70 +44,8 @@ public class ShopMechanic extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-        recyclerView = findViewById(R.id.mechanicViewer);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        mechanicList = new ArrayList<>();
-        mechanicAdapter = new MechanicAdapter(mechanicList);
-        recyclerView.setAdapter(mechanicAdapter);
-
-        databaseReference = FirebaseDatabase.getInstance().getReference("mechanic");
-
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                List<MechanicModel> updatedList = new ArrayList<>();
-
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    try {
-                        MechanicModel mechanic = dataSnapshot.getValue(MechanicModel.class);
-                        if (mechanic != null) {
-                            updatedList.add(mechanic);
-                        }
-                    } catch (Exception e) {
-                        Log.e("FirebaseError", "Data parsing error: " + e.getMessage());
-                    }
-                }
-
-                // Always update the list
-                mechanicList.clear();
-                mechanicList.addAll(updatedList);
-                mechanicAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(ShopMechanic.this, "Failed to fetch data!", Toast.LENGTH_SHORT).show();
-                Log.e("FirebaseError", error.getMessage());
-            }
-        });
-
-
-
-        /*databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                mechanicList.clear(); // Clear list to avoid duplication
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    MechanicModel mechanic = dataSnapshot.getValue(MechanicModel.class);
-                    if (mechanic != null) {
-                        mechanicList.add(mechanic);
-                    }
-                }
-                mechanicAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(MechanicListActivity.this, "Failed to fetch data!", Toast.LENGTH_SHORT).show();
-                Log.e("FirebaseError", error.getMessage());
-            }
-        });*/
-
         LinearLayout backBTN = findViewById(R.id.back_btn);
         LinearLayout addMechanic = findViewById(R.id.addMechanic);
-
         backBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -124,6 +61,40 @@ public class ShopMechanic extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        recyclerView = findViewById(R.id.mechanicViewer);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        mechanicList = new ArrayList<>();
+        mechanicAdapter = new MechanicAdapter(this, mechanicList);
+        recyclerView.setAdapter(mechanicAdapter);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("mechanic");
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                mechanicList.clear(); // Clear the list before updating
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                        MechanicModel mechanic = dataSnapshot.getValue(MechanicModel.class);
+                        if (mechanic != null) {
+                            mechanicList.add(mechanic);
+                        }
+
+                }
+
+
+                Log.d("RecyclerViewDebug", "Mechanic List Size: " + mechanicList.size());
+                mechanicAdapter.notifyDataSetChanged(); // Notify adapter after updating the list
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(ShopMechanic.this, "Failed to fetch data!", Toast.LENGTH_SHORT).show();
+                Log.e("FirebaseError", error.getMessage());
+            }
+        });
+
     }
 
 

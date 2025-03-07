@@ -89,7 +89,8 @@ public class AddMechanic extends AppCompatActivity {
 
                 String mId = databaseReference.push().getKey();
                     MechanicModel mModel = new MechanicModel(mFirstName, mLastname, mMiddleName, mSpecialty, mEmail, mPassword, currentDate);
-                    databaseReference.child(mId).setValue(mModel);
+                assert mId != null;
+                databaseReference.child(mId).setValue(mModel);
                     Toast.makeText(AddMechanic.this, "Mechanic has been added", Toast.LENGTH_SHORT).show();
 
                 Mfname.setText("");
