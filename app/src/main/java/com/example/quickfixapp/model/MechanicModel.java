@@ -1,6 +1,8 @@
 package com.example.quickfixapp.model;
 
-public class MechanicModel {
+import java.io.Serializable;
+
+public class MechanicModel implements Serializable {
     private String mFirstName;
     private String mLastName;
     private String mMiddleName;
@@ -9,6 +11,8 @@ public class MechanicModel {
     private String mPassword;
 
     private String dateAdded;
+    public MechanicModel(){}
+
     public MechanicModel(String mFirstName, String mLastName, String mMiddleName, String mSpecialty, String mEmail, String mPassword, String dateAdded) {
         this.mFirstName = mFirstName;
         this.mLastName = mLastName;

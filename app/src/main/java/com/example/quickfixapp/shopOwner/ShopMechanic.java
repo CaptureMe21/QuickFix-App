@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -26,77 +25,75 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ShopMechanic extends AppCompatActivity {
 
-    RecyclerView recyclerView;
-    MechanicAdapter mechanicAdapter;
-    ArrayList<MechanicModel> mechanicList;
-    DatabaseReference databaseReference;
+    private RecyclerView recyclerView;
+    private MechanicAdapter mechanicAdapter;
+    private ArrayList<MechanicModel> mechanicList;
+    private DatabaseReference databaseReference;
+    private static final String TAG = "ShopMechanic"; // For logging
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop_mechanic);
+
+        // Apply window insets for modern UI
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Initialize UI components
         LinearLayout backBTN = findViewById(R.id.back_btn);
         LinearLayout addMechanic = findViewById(R.id.addMechanic);
-        backBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ShopHomepage.class);
-                startActivity(intent);
-            }
+
+        // Back button action
+        backBTN.setOnClickListener(view -> {
+            finish();
         });
 
-        addMechanic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AddMechanic.class);
-                startActivity(intent);
-            }
+        // Add Mechanic button action
+        addMechanic.setOnClickListener(view -> {
+            startActivity(new Intent(ShopMechanic.this, AddMechanic.class));
         });
 
+        // Initialize RecyclerView
         recyclerView = findViewById(R.id.mechanicViewer);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        // Initialize the ArrayList and Adapter
         mechanicList = new ArrayList<>();
         mechanicAdapter = new MechanicAdapter(this, mechanicList);
         recyclerView.setAdapter(mechanicAdapter);
 
+        // Initialize Firebase reference
         databaseReference = FirebaseDatabase.getInstance().getReference("mechanic");
 
+        // Fetch data from Firebase
+        fetchMechanics();
+    }
+
+    private void fetchMechanics() {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                mechanicList.clear(); // Clear the list before updating
+                mechanicList.clear(); // Clear old data to prevent duplicates
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                        MechanicModel mechanic = dataSnapshot.getValue(MechanicModel.class);
-                        if (mechanic != null) {
-                            mechanicList.add(mechanic);
-                        }
-
+                    MechanicModel mechanic = dataSnapshot.getValue(MechanicModel.class);
+                    if (mechanic != null) {
+                        mechanicList.add(mechanic);
+                    }
                 }
-
-
-                Log.d("RecyclerViewDebug", "Mechanic List Size: " + mechanicList.size());
-                mechanicAdapter.notifyDataSetChanged(); // Notify adapter after updating the list
+                mechanicAdapter.notifyDataSetChanged(); // Update RecyclerView
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(ShopMechanic.this, "Failed to fetch data!", Toast.LENGTH_SHORT).show();
-                Log.e("FirebaseError", error.getMessage());
             }
         });
-
     }
-
-
 }
-

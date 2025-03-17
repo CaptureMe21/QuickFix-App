@@ -25,90 +25,95 @@ import java.util.Locale;
 
 public class AddMechanic extends AppCompatActivity {
 
-
-    DatabaseReference databaseReference;
+    private DatabaseReference databaseReference;
+    private EditText Mfname, Mlname, Mmname, Mspecialty, Memail, Mpassword;
+    private Button submit_btn;
+    private LinearLayout back_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_add_mechanic);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        EditText Mfname = findViewById(R.id.MFname);
-        EditText Mlname = findViewById(R.id.MLname);
-        EditText Mmname = findViewById(R.id.MMname);
-        EditText Mspecialty = findViewById(R.id.Mspecialty);
-        EditText Memail = findViewById(R.id.Memail);
-        EditText Mpassword = findViewById(R.id.Mpassword);
-        Button submit_btn =findViewById(R.id.submit_btn);
-        LinearLayout back_btn = findViewById(R.id.back_btn);
+        // Initialize UI Elements
+        Mfname = findViewById(R.id.MFname);
+        Mlname = findViewById(R.id.MLname);
+        Mmname = findViewById(R.id.MMname);
+        Mspecialty = findViewById(R.id.Mspecialty);
+        Memail = findViewById(R.id.Memail);
+        Mpassword = findViewById(R.id.Mpassword);
+        submit_btn = findViewById(R.id.submit_btn);
+        back_btn = findViewById(R.id.back_btn);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("mechanic");
 
-        submit_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                saveData();
-            }
-
-            private void saveData() {
-
-                String mFirstName = Mfname.getText().toString().trim();
-                String mLastname = Mlname.getText().toString().trim();
-                String mMiddleName = Mmname.getText().toString().trim();
-                String mSpecialty = Mspecialty.getText().toString().trim();
-                String mEmail = Memail.getText().toString().trim();
-                String mPassword = Mpassword.getText().toString().trim();
-
-
-                if (mFirstName.isEmpty() || mLastname.isEmpty() || mMiddleName.isEmpty() ||
-                        mSpecialty.isEmpty() || mEmail.isEmpty() || mPassword.isEmpty()) {
-                    Toast.makeText(AddMechanic.this, "Please fill all fields!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-
-                if (!android.util.Patterns.EMAIL_ADDRESS.matcher(mEmail).matches()) {
-                    Memail.setError("Enter a valid email");
-                    return;
-                }
-
-
-                if (mPassword.length() < 8) {
-                    Mpassword.setError("Password must be at least 8 characters");
-                    return;
-                }
-
-                String currentDate;
-                currentDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date());
-
-                String mId = databaseReference.push().getKey();
-                    MechanicModel mModel = new MechanicModel(mFirstName, mLastname, mMiddleName, mSpecialty, mEmail, mPassword, currentDate);
-                assert mId != null;
-                databaseReference.child(mId).setValue(mModel);
-                    Toast.makeText(AddMechanic.this, "Mechanic has been added", Toast.LENGTH_SHORT).show();
-
-                Mfname.setText("");
-                Mlname.setText("");
-                Mmname.setText("");
-                Mspecialty.setText("");
-                Memail.setText("");
-                Mpassword.setText("");
-
-            }
+        submit_btn.setOnClickListener(view -> saveData());
+        back_btn.setOnClickListener(view -> {
+            startActivity(new Intent(getApplicationContext(), ShopMechanic.class));
+            finish(); // Prevents activity stacking
         });
-        back_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ShopMechanic.class);
-                startActivity(intent);
-            }
-        });
+    }
 
+    private void saveData() {
+        String mFirstName = Mfname.getText().toString().trim();
+        String mLastName = Mlname.getText().toString().trim();
+        String mMiddleName = Mmname.getText().toString().trim();
+        String mSpecialty = Mspecialty.getText().toString().trim();
+        String mEmail = Memail.getText().toString().trim();
+        String mPassword = Mpassword.getText().toString().trim();
+
+        // Validate Input Fields
+        if (mFirstName.isEmpty() || mLastName.isEmpty() || mMiddleName.isEmpty() ||
+                mSpecialty.isEmpty() || mEmail.isEmpty() || mPassword.isEmpty()) {
+            Toast.makeText(getApplicationContext(), "All fields are required!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Validate Email Format
+        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(mEmail).matches()) {
+            Memail.setError("Enter a valid email address!");
+            Memail.requestFocus();
+            return;
+        }
+
+        // Validate Password Strength
+        if (mPassword.length() < 8) {
+            Mpassword.setError("Password must be at least 8 characters long!");
+            Mpassword.requestFocus();
+            return;
+        }
+
+        // Generate Current Timestamp
+        String currentDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date());
+
+        // Save to Firebase
+        String mId = databaseReference.push().getKey();
+        if (mId != null) {
+            MechanicModel mechanic = new MechanicModel(mFirstName, mLastName, mMiddleName, mSpecialty, mEmail, mPassword, currentDate);
+            databaseReference.child(mId).setValue(mechanic).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    Toast.makeText(getApplicationContext(), "Mechanic added successfully!", Toast.LENGTH_SHORT).show();
+                    clearFields();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+    }
+
+    private void clearFields() {
+        Mfname.setText("");
+        Mlname.setText("");
+        Mmname.setText("");
+        Mspecialty.setText("");
+        Memail.setText("");
+        Mpassword.setText("");
     }
 }

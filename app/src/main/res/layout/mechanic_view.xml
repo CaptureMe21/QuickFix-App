@@ -9,7 +9,7 @@
     android:layout_marginBottom="100dp"
     android:layout_marginEnd="24dp"
     android:layout_marginStart="24dp"
-    android:background="#D9D9D9">
+    android:background="@drawable/view_bg">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -19,44 +19,11 @@
 
 
         <TextView
-            android:id="@+id/Mfname"
+            android:id="@+id/Mname"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:fontFamily="@font/roboto"
-            android:text=""
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/Mmname"
-            app:layout_constraintHorizontal_bias="0.085"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.275" />
-
-        <TextView
-            android:id="@+id/Mmname"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:layout_marginEnd="2dp"
-            android:fontFamily="@font/roboto"
-            android:text=""
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/Mlname"
-            app:layout_constraintStart_toEndOf="@+id/Mfname"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.275" />
-
-        <TextView
-            android:id="@+id/Mlname"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="50dp"
+            android:layout_marginEnd="12dp"
             android:fontFamily="@font/roboto"
             android:text=""
             android:textColor="@color/black"
@@ -64,27 +31,29 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/Mmname"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.275" />
+
 
         <TextView
             android:id="@+id/Mspecialty"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginBottom="12dp"
-            android:text=""
-            android:textSize="18dp"
-            android:paddingStart="12dp"
-            android:textColor="@color/black"
             android:fontFamily="@font/roboto"
+            android:paddingStart="12dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/Mlname"
+            app:layout_constraintEnd_toEndOf="@+id/Mname"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/Mfname"
-            app:layout_constraintTop_toBottomOf="@+id/Mmname"
-            app:layout_constraintVertical_bias="0.157" />
+            app:layout_constraintStart_toStartOf="@+id/Mname"
+            app:layout_constraintTop_toBottomOf="@+id/Mname" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
